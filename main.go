@@ -12,4 +12,3 @@ func main() {
 	http.HandleFunc("/", handlerFunc)
 	http.ListenAndServe(":3000", nil)
 }
-
