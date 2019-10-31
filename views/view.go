@@ -1,7 +1,6 @@
 package views
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 	"path/filepath"
@@ -24,7 +23,6 @@ func (v *View) Render(w http.ResponseWriter, data interface{}) error {
 
 func NewView(layout string, files ...string) * View {
 	files = append(files, layoutFiles()...)
-	fmt.Println(files)
 	t, err := template.ParseFiles(files...)
 	if err != nil {
 		panic(err)

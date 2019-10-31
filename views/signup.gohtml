@@ -1,0 +1,12 @@
+{{define "yield"}}
+    {{template "signupForm"}}
+{{end}}
+{{define "signupForm"}}
+<form>
+    <label for="email">email</label>
+    <input name="email" type="email" id="email" placeholder="Email">
+    <label for="password">password</label>
+    <input name="password" type="password" id="password" placeholder="Password">
+    <button type="submit">submit</button>
+</form>
+{{end}}

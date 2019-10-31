@@ -6,8 +6,11 @@ import (
 	"net/http"
 )
 
-var homeView *views.View
-var contactView *views.View
+var (
+homeView *views.View
+ contactView *views.View
+signupView *views.View
+)
 
 func home(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "text/html")
@@ -28,6 +31,13 @@ func contact(w http.ResponseWriter, r *http.Request){
 	//}
 	must(contactView.Render(w, nil))
 }
+
+func signup(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	must(signupView.Render(w, nil))
+
+}
+
 
 //func handlerFunc(w http.ResponseWriter, r *http.Request){
 //	w.Header().Set("Content-Type", "text/html")
@@ -59,12 +69,14 @@ func main() {
 	//}
 	homeView = views.NewView("default", "views/home.gohtml")
 	contactView = views.NewView("default", "views/contact.gohtml")
+	signupView = views.NewView("default", "views/signup.gohtml")
+
 	r := mux.NewRouter()
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
+	r.HandleFunc("/signup", signup)
 	http.ListenAndServe(":8080", r)
 }
-
 func must(err error) {
 	if err != nil {
 		panic(err)
