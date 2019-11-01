@@ -2,7 +2,7 @@
     {{template "signupForm"}}
 {{end}}
 {{define "signupForm"}}
-<form>
+<form action="/signup" method="POST">
     <label for="email">email</label>
     <input name="email" type="email" id="email" placeholder="Email">
     <label for="password">password</label>
