@@ -17,7 +17,7 @@ type SignupForm struct {
 // create new users controller
 func NewUsers() *Users {
 	return &Users{
-		NewView: views.NewView("default", "views/users/new.gohtml"),
+		NewView: views.NewView("default", "users/new"),
 	}
 }	
 

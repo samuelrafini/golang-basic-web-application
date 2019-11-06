@@ -4,8 +4,8 @@ import "golang-basic-web-application/views"
 
 func NewStatic() *Static {
 	return &Static{
-		Home:views.NewView("default", "views/static/contact.gohtml"),
-		Contact:views.NewView("default", "views/static/home.gohtml"),
+		Home:views.NewView("default", "static/contact"),
+		Contact:views.NewView("default", "static/home"),
 	}
 }
 
